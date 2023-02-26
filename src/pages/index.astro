@@ -1,26 +1,17 @@
 ---
-import type { BreedsAllResponse } from '../common/interfaces/breeds-all-response.interface'
+//Layout
 import Layout from '../layouts/Layout.astro'
-import Footer from '../components/Footer.astro'
-import Nav from '../components/Nav.astro'
-
-const response = await fetch('https://dog.ceo/api/breeds/list/all')
-const data: BreedsAllResponse = await response.json()
-const allBreeds = []
-
-for (const key in data.message) {
-  if (data.message[key].length > 0) {
-    for (const value of data.message[key]) {
-      allBreeds.push(value + ' ' + key)
-    }
-  } else {
-    allBreeds.push(key)
-  }
-}
-console.log(allBreeds.length)
-
+//Components
 import Card from '../components/Card.astro'
 import Search from '../components/Search.astro'
+import Footer from '../components/Footer.astro'
+import Nav from '../components/Nav.astro'
+//Utils
+import { getDogs } from '../common/utils/getDogs'
+import { slugify } from '../common/utils/slugify'
+
+const breeds = await getDogs();
+
 ---
 
 <Layout title="DoggieFinder">
@@ -33,11 +24,10 @@ import Search from '../components/Search.astro'
           class="w-full grid grid-flow-row grid-cols-1 gap-8 justify-items-center md:grid-cols-2 lg:grid-cols-4"
         >
           {
-            allBreeds.map(breed => (
+            breeds.map(breed => (
               <Card
                 breed={breed}
-                type={breed.split(' ').length > 1 ? 'sub' : 'normal'}
-                href="sub"
+                href={`/breed/${slugify(breed)}`}
               />
             ))
           }

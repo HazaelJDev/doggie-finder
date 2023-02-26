@@ -1,7 +1,8 @@
 ---
+import { toTitle } from '../common/utils/toTitle';
+
 export interface Props {
   breed: string
-  type: string
   href: string
 }
 
@@ -10,8 +11,8 @@ const { href, breed } = Astro.props
 
 <li class="card">
   <a href={href} class="flex flex-row justify-between">
-    <h2>
-		{breed}
+    <h2 class="title-medium">
+		{toTitle(breed)}
     </h2>
 	<span class="material-symbols-outlined"> pets</span>
   </a>

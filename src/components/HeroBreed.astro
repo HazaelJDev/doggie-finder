@@ -1,0 +1,30 @@
+---
+import { toTitle } from '../common/utils/toTitle';
+
+export interface Props {
+  name: string;
+  type: string;
+  image: string;
+}
+
+const { name, type, image } = Astro.props
+---
+
+<section class="hero flex flex-col justify-start gap-4 md:flex-row justify-between items-center">
+    <figure>
+        <img class="w-96 h-96" src={image} alt={`Hero image - ${name}`}>
+    </figure>
+    <section class="flex flex-col pb-6 md:w-2/4  items-start pr-4">
+        <h2 class="display-small md:display-large">
+            {toTitle(name)}
+        </h2>
+        <p class="title:medium md:title-large">{type}</p>
+    </section>
+
+</section>
+
+<style>
+  .hero {
+    @apply w-full h-fit bg-fuchsia-100;
+  }
+</style>

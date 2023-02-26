@@ -1,0 +1,78 @@
+---
+//Layout
+import Layout from '../../layouts/Layout.astro'
+
+//Components
+import Nav from '../../components/Nav.astro'
+import Footer from '../../components/Footer.astro'
+
+//Utils
+import { getDogs } from '../../common/utils/getDogs'
+import { getImages } from '../../common/utils/getImages'
+import { slugify } from '../../common/utils/slugify'
+import HeroBreed from '../../components/HeroBreed.astro'
+import { toTitle } from '../../common/utils/toTitle'
+
+export interface Props {
+  name: string
+  type: string
+}
+
+export async function getStaticPaths() {
+  const breeds = await getDogs()
+
+  return breeds.map(breed => {
+    const typeBreed = breed.split(' ').length > 1 ? 'sub-breed' : 'breed'
+    const paramSlug = slugify(breed)
+
+    return {
+      params: { breed: paramSlug },
+      props: {
+        name: breed,
+        type: typeBreed
+      }
+    }
+  })
+}
+
+const { breed } = Astro.params
+const { name, type } = Astro.props
+
+const images = await getImages(type, name)
+const heroImage: string | undefined = images.pop();
+---
+
+<Layout title={`${toTitle(name)} | DoggieFinder`}>
+  <main>
+    <Nav logo="empty" name="DoggieFinder" />
+    <main class="w-full h-fit pb-10 flex flex-col items-center gap-10">
+      <HeroBreed image={heroImage ?? ''} name={name} type={type}/>
+      <section class="px-8 w-full">
+        <figure
+          class="w-full grid grid-flow-row grid-cols-1 gap-8 justify-items-center md:grid-cols-2 lg:grid-cols-4"
+        >
+          {
+            images.map(image => (
+              <img class="images" src={image} alt={`Image of ${name}`} />
+            ))
+          }
+        </figure>
+      </section>
+    </main>
+    <Footer
+      logo="empru"
+      name="DoggieFinder"
+      socialMedia={[
+        'https://twitter.com/hazajdev',
+        'https://www.instagram.com/hazadev/',
+        'https://www.linkedin.com/in/hazael-jimenez/'
+      ]}
+    />
+  </main>
+</Layout>
+
+<style>
+  .images {
+    @apply w-64 h-64 rounded-2xl p-4;
+  }
+</style>
