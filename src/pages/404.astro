@@ -1,14 +1,23 @@
 ---
-import Footer from '../components/Footer.astro';
-import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro'
+import Nav from '../components/Nav.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="Not found">
   <main>
     <Nav logo="empty" name="DoggieFinder" />
-    <main class="w-full h-screen py-10 flex flex-col items-center gap-10">
-        
+    <main
+      class="w-full h-screen text-center px-5 flex flex-col items-center justify-center gap-20 md:px-20"
+    >
+      <img
+        class="w-64 h-64"
+        src="/public/404.png"
+        alt="The dog ate my homework illustration."
+      />
+      <h3 class="display-medium">
+        Oops! Looks like the doggie ate this page because not exist. 😧
+      </h3>
     </main>
     <Footer
       logo="empru"
