@@ -1,0 +1,23 @@
+---
+import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro';
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="Not found">
+  <main>
+    <Nav logo="empty" name="DoggieFinder" />
+    <main class="w-full h-screen py-10 flex flex-col items-center gap-10">
+        
+    </main>
+    <Footer
+      logo="empru"
+      name="DoggieFinder"
+      socialMedia={[
+        'https://twitter.com/hazajdev',
+        'https://www.instagram.com/hazadev/',
+        'https://www.linkedin.com/in/hazael-jimenez/'
+      ]}
+    />
+  </main>
+</Layout>
