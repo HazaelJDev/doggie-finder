@@ -4,18 +4,18 @@ import Nav from '../components/Nav.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 
-<Layout title="Not found">
-  <main>
+<Layout title="Not found | DoggieFinder">
+  <main class="bg-slate-100 dark:bg-slate-800">
     <Nav logo="empty" name="DoggieFinder" />
     <main
-      class="w-full h-screen text-center px-5 flex flex-col items-center justify-center gap-20 md:px-20"
+      class="w-full h-screen text-center px-5 flex flex-col items-center justify-center gap-20 md:px-20 bg-slate-100 dark:bg-slate-800"
     >
       <img
         class="w-64 h-64"
         src="/public/404.png"
         alt="The dog ate my homework illustration."
       />
-      <h3 class="display-medium">
+      <h3 class="display-medium dark:text-gray-50 text-gray-800">
         Oops! Looks like the doggie ate this page because not exist. 😧
       </h3>
     </main>

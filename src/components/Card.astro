@@ -9,8 +9,8 @@ export interface Props {
 const { href, breed } = Astro.props
 ---
 
-<li class="card">
-  <a href={href} class="flex flex-row justify-between">
+<li class="card bg-secondary-200 dark:bg-secondary-500">
+  <a href={href} class="flex flex-row justify-between dark:text-gray-50 text-gray-800">
     <h2 class="title-medium">
 		{toTitle(breed)}
     </h2>
@@ -20,7 +20,7 @@ const { href, breed } = Astro.props
 
 <style>
 	.card{
-		@apply w-64 h-fit bg-fuchsia-100 rounded-2xl p-4 
+		@apply w-64 h-fit rounded-2xl p-4;
 	}
 
 </style>

@@ -43,9 +43,9 @@ const heroImage: string | undefined = images.pop();
 ---
 
 <Layout title={`${toTitle(name)} | DoggieFinder`}>
-  <main>
+  <main class="bg-slate-100 dark:bg-slate-800">
     <Nav logo="empty" name="DoggieFinder" />
-    <main class="w-full h-fit pb-10 flex flex-col items-center gap-10">
+    <main class="w-full h-fit pb-10 flex flex-col items-center gap-10 bg-slate-100 dark:bg-slate-800">
       <HeroBreed image={heroImage ?? ''} name={name} type={type}/>
       <section class="px-8 w-full">
         <figure

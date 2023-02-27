@@ -1,4 +1,6 @@
 ---
+import ThemeToggle from './ThemeToggleButton';
+
 export interface Props {
   logo: string
   name: string
@@ -7,11 +9,14 @@ export interface Props {
 const { logo, name } = Astro.props
 ---
 
-<header class="text-gray-400 bg-gray-900 body-font sticky top-0 z-50">
+<header class="dark:text-gray-400 text-gray-800 body-font sticky top-0 z-50 backdrop-blur-md">
   <div
-    class="container mx-auto flex flex-wrap p-5  md:flex-row justify-between items-center"
+    class="container mx-auto flex flex-wrap px-5 py-3 md:flex-row justify-between items-center"
   >
-    <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0" href="/">
+    <a
+      class="flex title-font font-medium items-center text-white mb-4 md:mb-0"
+      href="/"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -25,12 +30,10 @@ const { logo, name } = Astro.props
         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
         ></path>
       </svg>
-      <span class="ml-3 text-xl">{name}</span>
+      <span class="ml-3 text-xl dark:text-gray-50 text-gray-800">{name}</span>
     </a>
-    <button class="rounded-full  w-8 h-8 flex justify-center items-center">
-      <span class="material-symbols-outlined">
-        dark_mode
-      </span>
+    <button class="w-fit h-fit flex">
+      <ThemeToggle client:visible />
     </button>
   </div>
 </header>

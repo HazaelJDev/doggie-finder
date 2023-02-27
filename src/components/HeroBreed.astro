@@ -10,21 +10,21 @@ export interface Props {
 const { name, type, image } = Astro.props
 ---
 
-<section class="hero flex flex-col justify-start gap-4 md:flex-row justify-between items-center">
+<section class={`hero flex flex-col justify-start gap-4 md:flex-row justify-between items-center ${type === 'breed' ? 'bg-primary-200 dark:bg-primary-500' : 'bg-tertiary-200 dark:bg-tertiary-500'}`}>
     <figure>
         <img class="w-96 h-96" src={image} alt={`Hero image - ${name}`}>
     </figure>
-    <section class="flex flex-col pb-6 md:w-2/4  items-start pr-4">
+    <section class="flex flex-col pb-6 md:max-2xl:w-2/4  items-start pr-4 dark:text-gray-50 text-gray-800">
         <h2 class="display-small md:display-large">
             {toTitle(name)}
         </h2>
-        <p class="title:medium md:title-large">{type}</p>
+        <p class="title:medium md:max-2xl: title-large">{type}</p>
     </section>
 
 </section>
 
 <style>
   .hero {
-    @apply w-full h-fit bg-fuchsia-100;
+    @apply w-full h-fit;
   }
 </style>
