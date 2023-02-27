@@ -1,5 +1,5 @@
 ---
-import { toTitle } from '../common/utils/toTitle';
+import { toTitle } from '../common/utils/toTitle'
 
 export interface Props {
   breed: string
@@ -9,18 +9,17 @@ export interface Props {
 const { href, breed } = Astro.props
 ---
 
-<li class="card bg-secondary-200 dark:bg-secondary-500">
-  <a href={href} class="flex flex-row justify-between dark:text-gray-50 text-gray-800">
+<a href={href} class="card bg-secondary-200 dark:bg-secondary-500">
+  <li class="flex flex-row justify-between dark:text-gray-50 text-gray-800">
     <h2 class="title-medium">
-		{toTitle(breed)}
+      {toTitle(breed)}
     </h2>
-	<span class="material-symbols-outlined"> pets</span>
-  </a>
-</li>
+    <span class="material-symbols-outlined"> pets</span>
+  </li>
+</a>
 
 <style>
-	.card{
-		@apply w-64 h-fit rounded-2xl p-4;
-	}
-
+  .card {
+    @apply w-64 h-fit rounded-2xl p-4;
+  }
 </style>

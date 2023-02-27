@@ -39,36 +39,42 @@ const { breed } = Astro.params
 const { name, type } = Astro.props
 
 const images = await getImages(type, name)
-const heroImage: string | undefined = images.pop();
+const heroImage: string | undefined = images.pop()
 ---
 
 <Layout title={`${toTitle(name)} | DoggieFinder`}>
   <main class="bg-slate-100 dark:bg-slate-800">
     <Nav logo="empty" name="DoggieFinder" />
-    <main class="w-full h-fit pb-10 flex flex-col items-center gap-10 bg-slate-100 dark:bg-slate-800">
-      <HeroBreed image={heroImage ?? ''} name={name} type={type}/>
-      <section class="px-8 w-full">
-        <figure
-          class="w-full grid grid-flow-row grid-cols-1 gap-8 justify-items-center md:grid-cols-2 lg:grid-cols-4"
-        >
-          {
-            images.map(image => (
-              <img class="images" src={image} alt={`Image of ${name}`} />
-            ))
-          }
-        </figure>
-      </section>
+    <main
+      class="w-full h-fit pb-10 flex flex-col items-center gap-10 bg-slate-100 dark:bg-slate-800"
+    >
+      <HeroBreed image={heroImage ?? ''} name={name} type={type} />
+      {
+        images.length > 0 ? (
+          <section class="px-8 w-full grid grid-flow-row grid-cols-1 gap-8 justify-items-center md:grid-cols-2 lg:grid-cols-4">
+            {images.map(image => (
+              <figure>
+                <img class="images" src={image} alt={`Image of ${name}`} />
+              </figure>
+            ))}
+          </section>
+        ) : (
+          <section class="w-full h-40 px-5 flex flex-col text-center justify-center items-center md:px-10">
+            <h3 class="display-medium dark:text-gray-50 text-gray-800" >At the moment, there are no images to show. 😟</h3>
+          </section>
+        )
+      }
     </main>
-    <Footer
-      logo="empru"
-      name="DoggieFinder"
-      socialMedia={[
-        'https://twitter.com/hazajdev',
-        'https://www.instagram.com/hazadev/',
-        'https://www.linkedin.com/in/hazael-jimenez/'
-      ]}
-    />
   </main>
+  <Footer
+    logo="empru"
+    name="DoggieFinder"
+    socialMedia={[
+      'https://twitter.com/hazajdev',
+      'https://www.instagram.com/hazadev/',
+      'https://www.linkedin.com/in/hazael-jimenez/'
+    ]}
+  />
 </Layout>
 
 <style>
