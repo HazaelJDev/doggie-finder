@@ -2,13 +2,12 @@
 //Layout
 import Layout from '../layouts/Layout.astro'
 //Components
-import Card from '../components/Card.astro'
-import Search from '../components/Search.astro'
 import Footer from '../components/Footer.astro'
 import Nav from '../components/Nav.astro'
 //Utils
 import { getDogs } from '../common/utils/getDogs'
-import { slugify } from '../common/utils/slugify'
+import MainCards from '../components/MainCards'
+import HeroHome from '../components/HeroHome.astro'
 
 const breeds = await getDogs();
 
@@ -17,23 +16,7 @@ const breeds = await getDogs();
 <Layout title="DoggieFinder">
   <main class="bg-slate-100 dark:bg-slate-800">
     <Nav logo="empty" name="DoggieFinder" />
-    <main class="bg-slate-100 dark:bg-slate-800 w-full h-fit py-10 flex flex-col items-center gap-10">
-      <Search />
-      <section class="px-8 w-full">
-        <ul
-          class="w-full grid grid-flow-row grid-cols-1 gap-8 justify-items-center md:grid-cols-2 lg:grid-cols-4"
-        >
-          {
-            breeds.map(breed => (
-              <Card
-                breed={breed}
-                href={`/breed/${slugify(breed)}`}
-              />
-            ))
-          }
-        </ul>
-      </section>
-    </main>
+    <MainCards data={breeds} client:visible />
     <Footer
       logo="empru"
       name="DoggieFinder"
