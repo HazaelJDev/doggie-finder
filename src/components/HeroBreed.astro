@@ -14,7 +14,7 @@ const { name, type, image } = Astro.props
     <figure>
         <img class="w-full h-96 md:w-96" src={image} alt={`Hero image - ${name}`}>
     </figure>
-    <section class="flex flex-col gap-2 pb-6 md:max-2xl:w-2/4 items-start pr-4 dark:text-gray-50 text-gray-800">
+    <section class="w-full flex flex-col gap-2 pb-6 px-5 md:max-2xl:w-2/4 md:max-2xl:pl-0 items-start dark:text-gray-50 text-gray-800">
         <h2 class="display-medium">
             {toTitle(name)}
         </h2>
