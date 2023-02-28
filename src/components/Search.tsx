@@ -40,7 +40,7 @@ const Search: FC<Props> = ({
 
   return (
     <div className="w-4/5 flex justify-center">
-      <div className="mb-3 xl:w-96">
+      <div className="mb-3 w-full xl:w-96">
         <div className="relative mb-4 flex w-full flex-wrap items-stretch">
           <input            
             type="search"
