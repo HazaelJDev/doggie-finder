@@ -14,11 +14,11 @@ const { name, type, image } = Astro.props
     <figure>
         <img class="w-full h-96 md:w-96" src={image} alt={`Hero image - ${name}`}>
     </figure>
-    <section class="flex flex-col pb-6 md:max-2xl:w-2/4  items-start pr-4 dark:text-gray-50 text-gray-800">
-        <h2 class="display-small md:display-large">
+    <section class="flex flex-col gap-2 pb-6 md:max-2xl:w-2/4 items-start pr-4 dark:text-gray-50 text-gray-800">
+        <h2 class="display-medium">
             {toTitle(name)}
         </h2>
-        <p class="title:medium md:max-2xl: title-large">{type}</p>
+        <p class="title-large">{type}</p>
     </section>
 
 </section>

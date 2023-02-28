@@ -10,13 +10,13 @@ const { name, type, image } = Astro.props
 
 <section class={`hero flex flex-col justify-start gap-4 md:flex-row justify-between items-center ${type === 'breed' ? 'bg-primary-200 dark:bg-primary-500' : 'bg-tertiary-200 dark:bg-tertiary-500'}`}>
     <figure>
-        <img class="w-full h-96 md:w-96" src={image} alt={`Hero image - ${name}`}>
+        <img class="w-full h-96 dark:invert dark:mix-blend-lighten" src={image} alt={`Hero image - ${name}`}>
     </figure>
-    <section class="flex flex-col pb-6 md:max-2xl:w-2/4  items-start pr-4 dark:text-gray-50 text-gray-800">
+    <section class="flex flex-col gap-8 pb-6 md:max-2xl:w-2/4  items-start px-8 dark:text-gray-50 text-gray-800">
         <h2 class="display-small md:display-large">
-            {toTitle(name)}
+          Are you looking for a purebred or sub-breed dog? Discover the most popular breeds and their sub-breeds with Doggie Finder.
         </h2>
-        <p class="title:medium md:max-2xl: title-large">{type}</p>
+        <h3 class="title:medium md:max-2xl: title-large">With this application you can learn about the physical appearance of each dog.</h3>
     </section>
 
 </section>
