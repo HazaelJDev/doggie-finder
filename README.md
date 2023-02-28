@@ -1,43 +1,29 @@
-# Astro Starter Kit: Basics
+[![Doggie-Finder2.png](https://i.postimg.cc/4dpCjXnL/Doggie-Finder2.png)](https://doggie-finder.vercel.app/)
 
-```
-npm create astro@latest -- --template basics
-```
+# DoggieFinder
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+<p align="right"><a href="https://twitter.com/hazajdev" target="blank"><img src="https://img.shields.io/twitter/follow/hazajdev?logo=twitter&style=for-the-badge" alt="hazajdev" /></a></p>
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Web Application to learn about the physical appearance of each breed and sub-breed of dogs.
 
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+🌐 Take a look at https://doggie-finder.vercel.app/
 
+## 🧩 Stack usado
 
-## 🚀 Project Structure
+- <a href="https://astro.build/" target="_blank" rel="noreferrer"> <img src="https://i.postimg.cc/90msNSSs/true.png" alt="astro logo" width="40" height="40"/> Astro</a>
+- <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> React JS</a>
+- <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> TypeScript</a>
+- <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/> Tailwind CSS</a>
 
-Inside of your Astro project, you'll see the following folders and files:
+- <a href="https://vercel.com/" target="_blank" rel="noreferrer"><svg
+    width="40"
+    height="40"
+    viewBox="0 0 76 65"
+    fill="none" xmlns="http://www.w3.org/2000/svg"><path
+    d="M37.5274 0L75.0548 65H0L37.5274 0Z" fill="#ffffff"/>
+</svg> Vercel</a>
 
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
+## 🐶 Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -49,7 +35,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`      | Preview your build locally, before deploying     |
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
