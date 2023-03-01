@@ -15,7 +15,7 @@ const { logo, name, socialMedia } = Astro.props
     <a
       class="flex title-font font-medium items-center md:justify-start justify-center text-white"
     >
-      <img src={logo} alt="Logo Doggie Finder" />
+      <img class="w-10 h-10" src={logo} alt="Logo Doggie Finder" />
       <span class="ml-3 text-xl">{name}</span>
     </a>
     <p
@@ -38,7 +38,7 @@ const { logo, name, socialMedia } = Astro.props
     <span
       class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start"
     >
-      <a class="ml-3 text-gray-400" href={socialMedia[0]} target="_blank">
+      <a class="ml-3 text-gray-400" href={socialMedia[0]} target="_blank" aria-label="Go to Twitter of @hazajdev">
         <svg
           fill="currentColor"
           stroke-linecap="round"
@@ -52,7 +52,7 @@ const { logo, name, socialMedia } = Astro.props
           ></path>
         </svg>
       </a>
-      <a class="ml-3 text-gray-400" href={socialMedia[1]} target="_blank">
+      <a class="ml-3 text-gray-400" href={socialMedia[1]} target="_blank" aria-label="Go to Instagram of @hazadev">
         <svg
           fill="none"
           stroke="currentColor"
@@ -67,7 +67,7 @@ const { logo, name, socialMedia } = Astro.props
           ></path>
         </svg>
       </a>
-      <a class="ml-3 text-gray-400" href={socialMedia[2]} target="_blank">
+      <a class="ml-3 text-gray-400" href={socialMedia[2]} target="_blank" aria-label="Go to LinkedIn of Hazael Jimenez">
         <svg
           fill="currentColor"
           stroke="currentColor"

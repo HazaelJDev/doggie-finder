@@ -35,11 +35,11 @@ const MainCards: FC<Props> = ({ data }) => {
               />
             ))
           ) : noMatches ? (
-            <section className="w-full col-span-1 h-40 px-5 flex flex-col text-center justify-center items-center md:px-10 md:col-span-2 lg:col-span-4">
+            <li className="w-full col-span-1 h-40 px-5 flex flex-col text-center justify-center items-center md:px-10 md:col-span-2 lg:col-span-4">
               <h3 className="display-medium dark:text-gray-50 text-gray-800">
                 There are no matches with your search 😟
               </h3>
-            </section>
+            </li>
           ) : (
             data.map(breed => (
               <Card
