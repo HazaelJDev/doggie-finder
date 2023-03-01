@@ -1,21 +1,25 @@
 import { FC, useState } from 'react'
+//ManageState with Nanostores
+import { useStore } from '@nanostores/react';
+import { breedStore } from '../common/stores/breedsStore';
 
 interface Props {
   breeds: string[]
   setBreeds: (e: any) => any
   noMatches: boolean
   setNoMatches: (e: boolean) => any
-  data: string[]
+  //data: string[]
 }
 
 const Search: FC<Props> = ({
   breeds,
   setBreeds,
-  data,
+  //data,
   noMatches,
   setNoMatches
 }) => {
   const [searched, setSearched] = useState<string>('')
+  const $breedsStore = useStore(breedStore);
 
   const handledChange = (e: any) => {
     setSearched(e.target.value)
@@ -23,7 +27,7 @@ const Search: FC<Props> = ({
   }
 
   const filterBreeds = (textSearch: string) => {
-    let breedsSearched = data.filter(breed => {
+    let breedsSearched = $breedsStore.filter(breed => {
       if (breed.toString().toLowerCase().includes(textSearch.toLowerCase())) {
         return breed
       }
@@ -31,6 +35,7 @@ const Search: FC<Props> = ({
 
     if (textSearch === '') {
       setNoMatches(false)
+      breedsSearched = [];
     } else if (breedsSearched.length == 0) {
       setNoMatches(true)
     }

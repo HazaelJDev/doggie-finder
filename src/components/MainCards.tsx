@@ -2,6 +2,7 @@ import { FC, useState } from 'react'
 import { slugify } from '../common/utils/slugify'
 import Card from './Card'
 import Search from './Search'
+import { addBreeds } from '../common/stores/breedsStore'
 
 interface Props {
   data: string[]
@@ -11,10 +12,13 @@ const MainCards: FC<Props> = ({ data }) => {
   const [breeds, setBreeds] = useState<string[]>([])
   const [noMatches, setNoMatches] = useState<boolean>(false)
 
+  addBreeds(data);
+
+
   return (
     <main className="bg-slate-100 dark:bg-slate-800 w-full h-fit py-10 flex flex-col items-center gap-10">
       <Search
-        data={data}
+        //data={data}
         breeds={breeds}
         setBreeds={setBreeds}
         noMatches={noMatches}
